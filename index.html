@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+
+				<span class="comments"> 2018年3月11日，是我们在一起的日子。</span>
+				<br />
+				<span class="comments"> 至今已经6个月了，</span>
+				<br />
+				<span class="comments"> 很庆幸你能留在华科，留在我身边。</span>
+				<br />
+				<br />
+				<span class="comments"> 回首这6个月和你在一起的日子，</span>
+				<br />
+				<span class="comments"> 我们一起看电影，</span>
+				<br />
+				<span class="comments"> 一起去旅行，</span>
+				<br />
+				<span class="comments"> 一起在森林公园漫无目的的走着。</span>
+				<br />
+				<span class="comments"> 你所在的地方，</span>
+				<br />
+				<span class="comments"> 就是我的归宿。</span>
+				<br />
+				<br />
+				<span class="comments"> 这期间，</span>
+				<br />
+				<span class="comments"> 一个笨拙的男孩也总是会伤到他心爱的女孩，</span>
+				<br />
+				<span class="comments"> 以后的日子里，</span>
+				<br />
+				<span class="comments"> 我会更加努力的去爱你，</span>
+				<br />
+				<span class="comments"> 为你立黄昏，问你粥可温。</span>
+				<br />
+				<br />
+				<span class="comments"> 宝贝，我爱你！</span>
+				<br />
+				<br />
+
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						Mybaby, I have fallen in love with you for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Love u forever and ever.
+						<br/>
+						<div class="signature">- longjiang</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2018, 3, 11);
+		together.setHours(20);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+			document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+
+</html>
